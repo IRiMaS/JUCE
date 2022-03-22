@@ -169,6 +169,22 @@ public:
     /** Set this callback to be notified whenever an error occurs. Upon error, you
         may need to load the video again. */
     std::function<void (const String& /*error*/)> onErrorOccurred;
+    
+    /********** ********* START IRIMAS FIX ********* *********/
+    
+    void* getPimpl()
+    {
+        /*
+        if (pimpl.get() != nullptr)
+            return pimpl.get();
+        
+        return nullptr;
+         */
+        
+        return pimpl.get();
+    }
+    
+    /********** ********* END IRIMAS FIX ********* *********/
 
 private:
     //==============================================================================

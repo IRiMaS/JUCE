@@ -68,7 +68,12 @@ namespace juce
 
 /** @internal This macro contains a list of GL extension functions that need to be dynamically loaded on Windows/Linux.
     @see OpenGLExtensionFunctions
-*/
+ */
+ 
+/* ********** ********* START IRIMAS FIX ********* ******** */
+
+// note: only the last "USE_FUNCTION" was added (line 91) to the macro
+
 #define JUCE_GL_EXTENSION_FUNCTIONS(USE_FUNCTION) \
     USE_FUNCTION (glIsRenderbuffer,         GLboolean, (GLuint p1), (p1))\
     USE_FUNCTION (glBindRenderbuffer,       void, (GLenum p1, GLuint p2), (p1, p2))\
@@ -83,7 +88,10 @@ namespace juce
     USE_FUNCTION (glCheckFramebufferStatus, GLenum, (GLenum p1), (p1))\
     USE_FUNCTION (glFramebufferTexture2D,   void, (GLenum p1, GLenum p2, GLenum p3, GLuint p4, GLint p5), (p1, p2, p3, p4, p5))\
     USE_FUNCTION (glFramebufferRenderbuffer,  void, (GLenum p1, GLenum p2, GLenum p3, GLuint p4), (p1, p2, p3, p4))\
-    USE_FUNCTION (glGetFramebufferAttachmentParameteriv, void, (GLenum p1, GLenum p2, GLenum p3, GLint* p4), (p1, p2, p3, p4))
+    USE_FUNCTION (glGetFramebufferAttachmentParameteriv, void, (GLenum p1, GLenum p2, GLenum p3, GLint* p4), (p1, p2, p3, p4)) \
+    USE_FUNCTION (glReadPixels, void, (GLint p1, GLint p2, GLsizei p3, GLsizei p4, GLenum p5, GLenum p6, void* p7), (p1, p2, p3, p4, p5, p6, p7))
+
+/********** ********* END IRIMAS FIX ********* *********/
 
 /** @internal This macro contains a list of GL extension functions that need to be dynamically loaded on Windows/Linux.
     @see OpenGLExtensionFunctions

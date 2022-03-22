@@ -140,6 +140,24 @@ public:
 
     /** @internal */
     class Pimpl;
+    
+    /********** ********* START IRIMAS FIX ********* *********/
+    
+    void* getPimpl()
+    {
+        /*
+         
+        if (browser.get() != nullptr)
+            return browser.get();
+        
+        return nullptr;
+        
+        */
+        
+        return browser.get();
+    }
+    
+    /********** ********* END IRIMAS FIX ********* *********/
 
 private:
     //==============================================================================
