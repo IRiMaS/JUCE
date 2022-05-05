@@ -1382,6 +1382,9 @@ public:
 
         auto newBounds = windowBorder.addedTo (bounds);
 
+        /********** ********* START IRIMAS FIX ********* *********/
+
+        /*
         if (isUsingUpdateLayeredWindow())
         {
             if (auto parentHwnd = GetParent (hwnd))
@@ -1390,6 +1393,9 @@ public:
                 newBounds.translate (parentRect.getX(), parentRect.getY());
             }
         }
+        */
+
+        /********** ********* END IRIMAS FIX ********* *********/
 
         auto oldBounds = getBounds();
 
